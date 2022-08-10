@@ -8,7 +8,7 @@ local default_opts = {
   -- Overlength highlighting enabled by default
   enabled = true,
 
-  -- Colors for hightlight by specifying a ctermbg and bg
+  -- Colors for highlight by specifying a ctermbg and bg
   ctermbg = 'darkgrey',
   bg = '#8B0000',
 
