@@ -151,13 +151,6 @@ M.setup = function(opts)
 
   -- Set OverLength highlight group
   local colors = {}
-  local ok, hl = pcall(vim.api.nvim_get_hl_by_name, 'Normal', true)
-  if ok then
-    for k, v in pairs(hl) do
-      colors[k] = string.format('#%06x', v)
-    end
-  end
-
   for k, v in pairs(config.colors) do
     if k and k ~= nil then
       colors[k] = v
