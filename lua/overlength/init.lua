@@ -76,10 +76,10 @@ local function matchadd()
   if overlength_enabled then
     if vim.w.last_overlength == nil then
       vim.w.overlength_pattern = [[\%]]
-        .. get_virtual_column_modifier()
-        .. get_overlength() + config.grace_length + get_virtual_column_offset()
-        .. 'v'
-        .. get_repeat_char()
+          .. get_virtual_column_modifier()
+          .. get_overlength() + config.grace_length + get_virtual_column_offset()
+          .. 'v'
+          .. get_repeat_char()
 
       vim.w.last_overlength = vim.fn.matchadd('OverLength', vim.w.overlength_pattern)
     end
@@ -150,9 +150,24 @@ M.setup = function(opts)
   overlength_enabled = config.enabled
 
   -- Set Highlight group
+  local colors = {}
+  local ok, hl = pcall(vim.api.nvim_get_hl_by_name, 'Normal', true)
+    print(ok, hl)
+    if ok then
+      for k, v in pairs(hl) do
+      colors[k] = string.format('#%06x', v)
+    end
+  end
+
+  for k, v in pairs(config.colors) do
+    if k and k ~= nil then
+      colors[k] = v
+    end
+  end
+
   -- Needs to schedule it, not created if called directly
   vim.schedule(function()
-    vim.api.nvim_set_hl(0, 'OverLength', { ctermbg = config.ctermbg, bg = config.bg })
+    vim.api.nvim_set_hl(0, 'OverLength', colors)
   end)
 
   refresh()

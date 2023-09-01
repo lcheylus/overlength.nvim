@@ -9,8 +9,12 @@ local default_opts = {
   enabled = true,
 
   -- Colors for highlight by specifying a ctermbg and bg
-  ctermbg = 'darkgrey',
-  bg = '#8B0000',
+  colors = {
+    ctermfg = nil,
+    ctermbg = nil,
+    fg = nil,
+    bg = nil,
+  },
 
   -- Mode to use textwidth local options
   -- 0: Don't use textwidth at all, always use config.default_overlength.
