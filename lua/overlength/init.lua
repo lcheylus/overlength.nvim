@@ -149,7 +149,7 @@ M.setup = function(opts)
   config = require('overlength.config').parse(opts)
   overlength_enabled = config.enabled
 
-  -- Set Highlight group
+  -- Set OverLength highlight group
   local colors = {}
   local ok, hl = pcall(vim.api.nvim_get_hl_by_name, 'Normal', true)
     print(ok, hl)
