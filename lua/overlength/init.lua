@@ -76,10 +76,10 @@ local function matchadd()
   if overlength_enabled then
     if vim.w.last_overlength == nil then
       vim.w.overlength_pattern = [[\%]]
-          .. get_virtual_column_modifier()
-          .. get_overlength() + config.grace_length + get_virtual_column_offset()
-          .. 'v'
-          .. get_repeat_char()
+        .. get_virtual_column_modifier()
+        .. get_overlength() + config.grace_length + get_virtual_column_offset()
+        .. 'v'
+        .. get_repeat_char()
 
       vim.w.last_overlength = vim.fn.matchadd('OverLength', vim.w.overlength_pattern)
     end
