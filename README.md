@@ -38,9 +38,13 @@ require('overlength').setup({
    -- Overlength highlighting enabled by default
   enabled = true,
 
-  -- Colors for highlight by specifying a ctermbg and bg
-  ctermbg = 'darkgrey',
-  bg = '#8B0000',
+  -- Colors for OverLength highlight group
+  colors = {
+    ctermfg = nil,
+    ctermbg = 'darkgrey',
+    fg = nil,
+    bg = '#8B0000',
+  }
 
   -- Mode to use textwidth local options
   -- 0: Don't use textwidth at all, always use config.default_overlength.
@@ -64,7 +68,7 @@ You could change the colors used to highlight too long lines:
 
 
 ```lua
-require('overlength').setup({ bg='#592929' })
+require('overlength').setup({ colors = { bg='#592929' } })
 ```
 
 ## Usage

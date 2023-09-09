@@ -8,9 +8,13 @@ local default_opts = {
   -- Overlength highlighting enabled by default
   enabled = true,
 
-  -- Colors for highlight by specifying a ctermbg and bg
-  ctermbg = 'darkgrey',
-  bg = '#8B0000',
+  -- Colors for Overlength highlight group
+  colors = {
+    ctermfg = nil,
+    ctermbg = 'darkgrey',
+    fg = nil,
+    bg = '#8B0000',
+  },
 
   -- Mode to use textwidth local options
   -- 0: Don't use textwidth at all, always use config.default_overlength.
@@ -38,6 +42,11 @@ local function validate(opts)
 
   if type(opts) ~= 'table' then
     vim.api.nvim_err_writeln('Error: overlength/config - opts is not a table')
+    return false
+  end
+
+  if (opts['colors'] ~= nil) and (type(opts['colors']) ~= 'table') then
+    vim.api.nvim_err_writeln('Error: overlength/config - opts["colors"] is not a table')
     return false
   end
 

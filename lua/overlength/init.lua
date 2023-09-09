@@ -149,10 +149,17 @@ M.setup = function(opts)
   config = require('overlength.config').parse(opts)
   overlength_enabled = config.enabled
 
-  -- Set Highlight group
+  -- Set OverLength highlight group
+  local colors = {}
+  for k, v in pairs(config.colors) do
+    if k and k ~= nil then
+      colors[k] = v
+    end
+  end
+
   -- Needs to schedule it, not created if called directly
   vim.schedule(function()
-    vim.api.nvim_set_hl(0, 'OverLength', { ctermbg = config.ctermbg, bg = config.bg })
+    vim.api.nvim_set_hl(0, 'OverLength', colors)
   end)
 
   refresh()
