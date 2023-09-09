@@ -3,7 +3,7 @@
 overlength.nvim is a small plugin for Neovim to highlight the part of a line that
 doesn't fit into textwidth (or really, whatever width you like).
 
-![](./screenshot.png)
+![Screenshot of the overlength.nvim plugin](https://github.com/lcheylus/overlength.nvim/assets/3294998/d64df552-271f-47c6-9e35-9116c146b7eb)
 
 This plugin is inspired by the Vim plugin
 [overlength.vim](https://github.com/tjdevries/overlength.vim) developed by TJ
