@@ -156,7 +156,6 @@ M.setup = function(opts)
       colors[k] = v
     end
   end
-  -- vim.print(colors)
 
   -- Needs to schedule it, not created if called directly
   vim.schedule(function()
