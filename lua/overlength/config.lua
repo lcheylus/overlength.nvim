@@ -8,12 +8,12 @@ local default_opts = {
   -- Overlength highlighting enabled by default
   enabled = true,
 
-  -- Colors for Overlenght highlight group
+  -- Colors for Overlength highlight group
   colors = {
     ctermfg = nil,
-    ctermbg = nil,
-    foreground = nil,
-    background = nil,
+    ctermbg = 'darkgrey',
+    fg = nil,
+    bg = '#8B0000',
   },
 
   -- Mode to use textwidth local options
