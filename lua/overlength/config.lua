@@ -45,6 +45,11 @@ local function validate(opts)
     return false
   end
 
+  if (opts['colors'] ~= nil) and (type(opts['colors']) ~= 'table') then
+    vim.api.nvim_err_writeln('Error: overlength/config - opts["colors"] is not a table')
+    return false
+  end
+
   if (opts['disable_ft'] ~= nil) and (type(opts['disable_ft']) ~= 'table') then
     vim.api.nvim_err_writeln('Error: overlength/config - opts["disable_ft"] is not a table')
     return false
