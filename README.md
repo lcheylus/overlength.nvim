@@ -15,11 +15,18 @@ lines"](https://vim.fandom.com/wiki/Highlight_long_lines).
 
 Neovim version >= 0.7.0 is necessary to use this plugin.
 
-Install this plugin using your favorite plugin manager. For example, using
-[packer](https://github.com/wbthomason/packer.nvim):
+Install this plugin using your favorite plugin manager: 
+
+- with [packer](https://github.com/wbthomason/packer.nvim)
 
 ```lua
 use 'lcheylus/overlength.nvim'
+```
+
+- with [lazy.nvim](https://github.com/folke/lazy.nvim)
+
+```lua
+{ 'lcheylus/overlength.nvim' }
 ```
 
 To get started with the default configuration, add:
