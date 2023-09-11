@@ -15,7 +15,7 @@ lines"](https://vim.fandom.com/wiki/Highlight_long_lines).
 
 Neovim version >= 0.7.0 is necessary to use this plugin.
 
-Install this plugin using your favorite plugin manager: 
+Install this plugin using your favorite plugin manager:
 
 - with [packer](https://github.com/wbthomason/packer.nvim)
 
@@ -67,7 +67,7 @@ require('overlength').setup({
   highlight_to_eol = true,
 
   -- List of filetypes to disable overlength highlighting
-  disable_ft = { 'qf', 'help', 'man', 'lazy', 'packer', 'NvimTree', 'Telescope', 'WhichKey' },
+  disable_ft = { 'qf', 'help', 'man', 'checkhealth', 'lazy', 'packer', 'NvimTree', 'Telescope', 'WhichKey' },
 })
 ```
 
