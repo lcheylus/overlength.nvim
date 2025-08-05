@@ -67,7 +67,7 @@ require('overlength').setup({
   highlight_to_eol = true,
 
   -- List of filetypes to disable overlength highlighting
-  disable_ft = { 'qf', 'help', 'man', 'checkhealth', 'lazy', 'packer', 'NvimTree', 'Telescope', 'WhichKey' },
+  disable_ft = { 'qf', 'help', 'man', 'checkhealth', 'lazy', 'packer', 'NvimTree', 'Telescope', 'TelescopePrompt', 'TelescopeResults', 'WhichKey' },
 })
 ```
 
