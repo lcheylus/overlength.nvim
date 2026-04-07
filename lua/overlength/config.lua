@@ -30,7 +30,19 @@ local default_opts = {
   highlight_to_eol = true,
 
   -- List of filetypes to disable overlength highlighting
-  disable_ft = { 'qf', 'help', 'man', 'checkhealth', 'lazy', 'packer', 'NvimTree', 'Telescope', 'TelescopePrompt', 'TelescopeResults', 'WhichKey' },
+  disable_ft = {
+    'qf',
+    'help',
+    'man',
+    'checkhealth',
+    'lazy',
+    'packer',
+    'NvimTree',
+    'Telescope',
+    'TelescopePrompt',
+    'TelescopeResults',
+    'WhichKey',
+  },
 }
 
 local M = {}
@@ -41,27 +53,31 @@ local function validate(opts)
   end
 
   if type(opts) ~= 'table' then
-    vim.api.nvim_err_writeln('Error: overlength/config - opts is not a table')
+    vim.api.nvim_echo({ 'Error: overlength/config - opts is not a table' }, true, { err = true })
     return false
   end
 
   if (opts['colors'] ~= nil) and (type(opts['colors']) ~= 'table') then
-    vim.api.nvim_err_writeln('Error: overlength/config - opts["colors"] is not a table')
+    vim.api.nvim_echo({ 'Error: overlength/config - opts["colors"] is not a table' }, true, { err = true })
     return false
   end
 
   if (opts['disable_ft'] ~= nil) and (type(opts['disable_ft']) ~= 'table') then
-    vim.api.nvim_err_writeln('Error: overlength/config - opts["disable_ft"] is not a table')
+    vim.api.nvim_echo({ 'Error: overlength/config - opts["disable_ft"] is not a table' }, true, { err = true })
     return false
   end
 
   if opts['textwidth_mode'] ~= nil then
     -- In Lua 5.1, cannot check if number type is integer or float
     if tonumber(opts['textwidth_mode']) == nil then
-      vim.api.nvim_err_writeln('Error: overlength/config - opts["textwidth_mode"] is not an integer')
+      vim.api.nvim_echo({ 'Error: overlength/config - opts["textwidth_mode"] is not an integer' }, true, { err = true })
       return false
     elseif (opts['textwidth_mode'] < 0) or (opts['textwidth_mode'] > 2) then
-      vim.api.nvim_err_writeln('Error: overlength/config - invalid value for opts["textwidth_mode"], must be 0, 1 or 2')
+      vim.api.nvim_echo(
+        { 'Error: overlength/config - invalid value for opts["textwidth_mode"], must be 0, 1 or 2' },
+        true,
+        { err = true }
+      )
       return false
     end
   end

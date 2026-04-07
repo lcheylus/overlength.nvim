@@ -140,7 +140,7 @@ end
 M.setup = function(opts)
   -- Check Neovim version >= 0.7.0
   if vim.fn.has('nvim-0.7') ~= 1 then
-    vim.api.nvim_err_writeln('Error: overlength - Neovim version >= 0.7.0 necessary')
+    vim.api.nvim_echo({ 'Error: overlength - Neovim version >= 0.7.0 necessary' }, true, { err = true })
     return
   end
 
